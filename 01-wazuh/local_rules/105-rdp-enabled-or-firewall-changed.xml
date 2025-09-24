@@ -1,0 +1,14 @@
+<-- rdp enabled or firewall changed -->
+
+<group name="local,rdp,firewall,">
+  <rule id="100105" level="9">
+    <field name="decoded_as">eventchannel</field>
+    <match>TermService</match>
+    <match>Remote Desktop</match>
+    <description>RDP service enabled or firewall rule changed for RDP - investigate unexpected enabling</description>
+    <group>lateral_movement,configuration_change,</group>
+    <mitre>
+      <id>T1021</id>
+    </mitre>
+  </rule>
+</group>
