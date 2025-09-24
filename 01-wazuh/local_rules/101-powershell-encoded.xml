@@ -1,0 +1,13 @@
+<!-- 101-powershell-enconded  -->
+
+<group name="local,powershell,commandline,">
+  <rule id="100101" level="10">
+    <field name="win.system.providerName">Microsoft-Windows-Sysmon</field>
+    <match>-enc</match>
+    <description>PowerShell EncodedCommand detected (CommandLine contains -enc)</description>
+    <group>powershell,execution, obfuscation,</group>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+  </rule>
+</group>
