@@ -2,8 +2,8 @@
 <group name="local,execution,temp,downloads,">
   <rule id="100104" level="8">
     <field name="win.system.providerName">Microsoft-Windows-Sysmon</field>
-    <match>%TEMP%</match>
-    <match>\\Downloads\\</match>
+    <match>\Temp\</match>
+    <match>\Downloads\</match>
     <description>Execution from user temp or Downloads folder (suspicious execution path)</description>
     <group>execution_suspicious,</group>
     <mitre>
