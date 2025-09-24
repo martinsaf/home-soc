@@ -1,0 +1,16 @@
+<!-- 100-ssh-bruteforce.xml -->
+
+<group name="local,ssh, authentication,">
+  <rule id="100100" level="10">
+    <decoded_as>syslog</decoded_as>
+    <field name="program">sshd</field>
+    <match>Failed password</match>
+    <frequency>5</frequency>
+    <timeframe>60</timeframe>
+    <description>SSH brute force: ≥5 failed password attemps from same IP in 60s </description>
+    <group>authentication_failed,bruteforce,</group>
+    <mitre>
+      <id>T1110.001</id>
+    </mitre>
+  </rule>
+</group>
