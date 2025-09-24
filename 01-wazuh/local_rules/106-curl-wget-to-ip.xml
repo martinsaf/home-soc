@@ -1,0 +1,15 @@
+<-- curl wget to ip -->
+
+<group name="local,network,egress,">
+  <rule id="100106" level="8">
+    <decoded_as>syslog</decoded_as>
+    <match>curl</match>
+    <match>wget</match>
+    <match>[0-9]+\.[0-9]+\.[0-9]+\.[0-9]</match>
+    <description>Direct HTTP fetch to raw IP (curl/wget to IP) - suspicious unsigned external fetch</description>
+    <group>egress,commandLine,</group>
+    <mitre>
+      <id>T1071</id>
+    </mitre>
+  </rule>
+</group>
