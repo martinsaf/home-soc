@@ -1,4 +1,4 @@
-<!-- 102-new-user-created  -- >
+<!-- 102-new-user-created  -->
 
 <group name="local,account_management,">
   <rule id="100102" level="10">
