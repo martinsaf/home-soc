@@ -1,13 +1,16 @@
-<-- 104 exec from temp downloads -->
-<group name="local,execution,temp,downloads,">
+<!-- 104 exec from temp downloads -->
+<group name="local,execution,temp,downloads">
   <rule id="100104" level="8">
     <field name="win.system.providerName">Microsoft-Windows-Sysmon</field>
+    <field name="win.system.eventID">1</field>
+    <!-- Matches paths that contain \Temp\ or \Downloads\  -->
     <match>\Temp\</match>
     <match>\Downloads\</match>
-    <description>Execution from user temp or Downloads folder (suspicious execution path)</description>
+    <description>Execution from user temp or Downloads folder (suspicious execu>
     <group>execution_suspicious,</group>
     <mitre>
       <id>T1059</id>
     </mitre>
   </rule>
 </group>
+
