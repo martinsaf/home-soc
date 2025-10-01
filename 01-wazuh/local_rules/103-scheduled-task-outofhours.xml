@@ -1,6 +1,6 @@
-<-- 103-scheduled-task-outofhours  -->
+<!-- 103-scheduled-task-outofhours  -->
 
-<group name="local,scheduled_task,">
+<group name="local,scheduled_task">
   <rule id="100103" level="8">
     <field name="event_id">4698</field>
     <description>Scheduled task created (EventID 4698) - flagged if created outside business hours</description>
