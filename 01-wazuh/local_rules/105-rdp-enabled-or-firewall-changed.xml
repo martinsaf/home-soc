@@ -1,6 +1,6 @@
-<-- rdp enabled or firewall changed -->
+<!-- rdp enabled or firewall changed -->
 
-<group name="local,rdp,firewall,">
+<group name="local,rdp,firewall">
   <rule id="100105" level="9">
     <field name="decoded_as">eventchannel</field>
     <match>TermService</match>
