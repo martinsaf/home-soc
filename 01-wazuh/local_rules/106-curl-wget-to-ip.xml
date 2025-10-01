@@ -1,11 +1,9 @@
-<-- curl wget to ip -->
+<!-- 106-curl-wget-to-ip.xml -->
 
-<group name="local,network,egress,">
+<group name="local,network,egress">
   <rule id="100106" level="8">
-    <decoded_as>syslog</decoded_as>
-    <match>curl</match>
-    <match>wget</match>
-    <match>[0-9]+\.[0-9]+\.[0-9]+\.[0-9]</match>
+    <!-- Generic match: catches curl/wget to IP addresses -->
+    <pcre>(curl|wget)\s+https?:\/\/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+</pcre>
     <description>Direct HTTP fetch to raw IP (curl/wget to IP) - suspicious unsigned external fetch</description>
     <group>egress,commandLine,</group>
     <mitre>
