@@ -1,21 +1,8 @@
 <!-- 100-ssh-bruteforce.xml -->
-
 <group name="local,ssh,authentication">
-
-  <!-- Base rule: single SSH failure -->
-  <rule id="100100" level="5">
-    <decoded_as>sshd</decoded_as>
-    <match>Failed password</match>
-    <description>SSH authentication failure</description>
-    <group>authentication_failed,</group>
-    <mitre>
-      <id>T1110.001</id>
-    </mitre>
-  </rule>
-
-  <!-- Frequency rule: real brute force -->
+  <!-- Brute force rule base on official rule 5760 -->
   <rule id="100101" level="12" frequency="5" timeframe="60">
-    <if_matched_sid>100100</if_matched_sid>
+    <if_matched_sid>5760</if_matched_sid>
     <same_srcip />
     <description>SSH brute force detected from source IP $(srcip)</description>
     <group>bruteforce,</group>
