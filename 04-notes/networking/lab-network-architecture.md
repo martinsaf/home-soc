@@ -26,6 +26,12 @@ All lab traffic flows through the **Ethernet (RJ-45) interface** of my Windows l
     2. **Adapter 2**: *Bridged Adapter* -> **Wi-Fi**
        -> Provides internet access (for updates, package installs, etc.) **not used for lab traffic**.
 
+- Both VMs run Wazuh agents and forward security telemetry:
+  - Windows 10 VM (192.168.200.20):
+      - Wazuh agent + Sysmon (monitoring process creation, network connections, etc.)
+  - Ubuntu 22.04 VM (192.168.200.30):
+      - Wazuh agent + auditd (monitoring sudo, file access, SSH logins, etc.)
+
 ## Connectivity
 - All devices in `192.168.200.0/24` can ping each other:
   - Laptop (`192.168.200.1`)
