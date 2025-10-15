@@ -11,12 +11,12 @@ All lab traffic flows through the **Ethernet (RJ-45) interface** of my Windows l
   - This interface connect directly (via RJ-45 cable) to the Ubuntu Server.
   - Hosts two VMs:
     - **Windows 10 VM** (`192.168.200.20`)
-    - **Ubuntu 22.04 VM** (`192.168.200.30`)
+    - **Ubuntu 22.04 VM** (`192.168.200.3`)
 
 - **Ubuntu Server**
   - Physical or separate machine (not a VM on this laptop)
   - Connected directly to the laptop via Ethernet cable.
-  - IP: `192.168.200.10`
+  - IP: `192.168.200.2`
   - Runs: **Wazuh Manager, Indexer, and Dashboard** (All-in_one).
  
 - **Virtual Machines (on Windows Laptop)**
@@ -36,8 +36,18 @@ All lab traffic flows through the **Ethernet (RJ-45) interface** of my Windows l
 - All devices in `192.168.200.0/24` can ping each other:
   - Laptop (`192.168.200.1`)
   - Windows VM (`192.168.200.20`)
-  - Ubuntu VM (`192.168.200.30`)
-  - Ubuntu Server (`192.168.200.10`)
+  - Ubuntu VM (`192.168.200.3`)
+  - Ubuntu Server (`192.168.200.2`)
+
+## Routing Behavior (for rebuilds)
+- **Linux VM**:
+  - Default route voa Wi-Fi (`metric 101`) -> internet access
+  - Lab subnet (`192.168.200.0/24`) via Ethernet (`metric 100`)
+  - High metric (`20100`) on lab interface prevents it from being used for outbound traffic.
+ 
+- **Ubuntu Server**:
+  - Default route via Wifi (`metric 600`)
+  - Lab subnet (`192.168.200.0/24`) is local-only (no default on `eno1`)
 
 ## Why This Design?
 > - The **Ethernet interface** creates a clean, isolated physical segment for SOC telemetry (Sysmon, auditd, Wazuh agent traffic).
