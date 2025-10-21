@@ -11,7 +11,7 @@ Each file captures a reusable concept, configuration, troubleshooting step, or d
 ## Windows
 
 ## Linux
-
+- [audit: monitoring sudo, identity, and SSH config](https://github.com/martinsaf/home-soc/blob/main/04-notes/linux/auditd-config.md)
 ## Networking
 
 ## Wazuh
