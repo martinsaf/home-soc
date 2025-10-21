@@ -25,9 +25,24 @@ All events are tagged with `-k` (key) for Wazuh correlation.
 - Wazuh agent read logs from `/var/log/audit/audit.log`
 - Events with key `audit-wazuh-c` are processed by Wazuh auditd decoder
 - Confirmed working: events apper in Wazuh dasboard
-
+```bash
+The presence of `audit-wazuh-c` suggests this config was likely deployed or influenced by Wazuh's default auditd integration
+```
 
 ## Verification Steps
 - Service status: `systemctl status auditd`
 - Active rules: `sudo auditctl -l`
 - Log sample: `sudo tail /var/log/audit/audit.log`
+- Test, trigger a sudo event: `sudo whoami`
+```bash
+Then check for new log entries with key=priv_esc or audit-wazuh-c
+```
+
+## Persistence
+Rules are persistent across reboots because:
+- They are likely defined in `etc/audit/rules.d`
+- The audit service is enabled: `systemctl is-enabled auditd`
+```bash
+To see the source file:
+`grep -r "priv_esc\|identity" /etc/audit/rules.d`
+```
