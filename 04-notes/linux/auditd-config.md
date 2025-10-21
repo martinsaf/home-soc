@@ -40,7 +40,7 @@ Then check for new log entries with key=priv_esc or audit-wazuh-c
 
 ## Persistence
 Rules are persistent across reboots because:
-- They are likely defined in `etc/audit/rules.d`
+- They are defined in `etc/audit/rules.d`
 - The audit service is enabled: `systemctl is-enabled auditd`
 ```bash
 To see the source file:
