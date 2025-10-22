@@ -1,7 +1,7 @@
 # Windows Endpoint Configuration (Sysmon + Wazuh Agent)
 
 ## Purpose
-Capture endpoint telemetry (process, file, network activity) via Sysmon and forward to Wazuh for detection.
+Provide a lightweight reference for the Windows VM's security telemetry stack in the home SOC lab.
 
 ## Componentes Instaled
 - **Sysmon64** (v15+) - service name: `Sysmon64`
@@ -11,24 +11,17 @@ Capture endpoint telemetry (process, file, network activity) via Sysmon and forw
   - `System`
   - `Microsoft-Windows-Sysmon/Operational`
  
-## Current Sysmon Behavior (Observed)
-Based on live event (`Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational"`):
-- **Event ID 11 (FileCreate)** is being logged -> file creation monitoring is active
-
-## Wazuh Integration
-- Wazuh agent reads:
-  - `Microsoft-Windows-Sysmon/Operational`
-  - Windows Security log (logon, account changes)
-- Event appear in Wazuh Dashboard under **Windows** -> confirmed working.
+## Status
+- Sysmon is active and generating events (e.g., Event ID 11: FileCreate)
+- Wazuh agent is running and forwarding logs to the Wazuh server
+- Events visible in Wazuh Dashboard -> integration confirmed
 
 ## Verification Steps
 ```powershell
-# Get Sysmon service
-Get-Service Sysmon64
-
-# View recent Sysmon events
+Get-Service Sysmon64, WazuhSvc
 Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 5
+```
 
-# Check Wazuh agent
-Get-Service WazuhSvc
 
+> For details on Sysmon rules and configuration, see:
+> [Sysmon: modular configuration from Olaf Hartong](https://github.com/olafhartong/sysmon-modular)
