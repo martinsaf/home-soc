@@ -1,0 +1,9 @@
+<!-- Custom rule: Detect file creation in /tmp -->
+<group name="auditd,">
+  <rule id="110001" level="3">
+    <if_sid>80700</if_sid>
+    <match>/tmp/</match>
+    <description>File created or modified in /tmp directory</description>
+    <group>tmp_activity, suspicious_file,</group>
+  </rule>
+</group>
