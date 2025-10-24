@@ -3,7 +3,7 @@
 ## Purpose
 Monitor privilege escalation, identity changes, and critical file access on the Ubuntu endpoint for Wazuh-based detection
 - Privilege escalation (`sudo` usage)
-- Identify changes (`/etc/passwd`, `/etc/group`, `/etc/shadow`)
+- Identify changes (`/etc/passwd`, `/etc/group`, `/etc/shadow`, `/etc/tmp`)
 - SSH configuration tampering
 - Root command execution
 
@@ -20,6 +20,7 @@ All events are tagged with `-k` (key) for Wazuh correlation.
 - `w /usr/bin/sudo -p x -k priv_esc`
 - `w /etc/sudoers -p wa -k config`
 - `w /etc/ssh/sshd_config -p wa -k ssh_config`
+- `-w /tmp -p wa -k tmp_files`
 
 ## Integration with Wazuh
 - Wazuh agent read logs from `/var/log/audit/audit.log`
