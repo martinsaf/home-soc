@@ -1,0 +1,13 @@
+<group name="sysmon,">
+  <rule id="112001" level="10">
+    <if_group>sysmon</if_group>
+    <field name="win.system.eventID">11</field>
+    <field name="win.eventdata.targetFilename" type="pcre2">(?i)^C:\\\\temp\\\\</field>
+    <description>Sysmon: File created in C:\temp</description>
+    <mitre>
+      <id>T1059.001</id>
+      <id>T1105</id>
+    </mitre>
+    <group>suspicious_file, tmp_activity,</group>
+  </rule>
+</group>
