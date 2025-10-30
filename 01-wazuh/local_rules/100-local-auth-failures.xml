@@ -1,6 +1,7 @@
 <group name="local,authentication,bruteforce">
   <rule id="12501" level="10" frequency="5" timeframe="60">
     <if_matched_sid>2501</if_matched_sid>
+    <same_srcip />
     <description>Multiple authentication failures from the same source IP (possible brute-force attack) </description>
     <group>authentication_failed,brute_force</group>
   </rule>
