@@ -26,7 +26,7 @@ The modular design allows selective rule inclusion (e.g., enable `powershell` ru
 - MITRE ATT&CK technique references in comments
 
 ## Local Modifications
-- **Removed exclusion for `cipher.exe`**in `1_process_creation` rules to enable detection of its execution
+- **Removed exclusion for `cipher.exe`** in `1_process_creation` rules to enable detection of its execution
   - Original line removed:
     ```xml
     <Image condition="contains">cipher.exe</Image>
