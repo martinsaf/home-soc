@@ -1,10 +1,10 @@
 <!-- 102-bruteforce -->
-<group name="windows,authentication">
+<group name="windows,authentication,bruteforce">
   <rule id="102101" level="12" frequency="5" timeframe="60">
-    <if_matched_sid>60106</if_matched_sid>
-    <same_srcip />
-    <description>Windows brute-force attack detected from $(srcip)</description>
-    <group>bruteforce,</group>
+    <if_matched_sid>60122</if_matched_sid>
+    <same_field>win.eventdata.ipAddress</same_field>
+    <description>Brute-force attack detected from IP $(win.eventdata.ipAddress)</description>
+    <group>brute-force,attack,</group>
     <mitre><id>T1110.001</id></mitre>
   </rule>
 </group>
