@@ -25,6 +25,14 @@ The modular design allows selective rule inclusion (e.g., enable `powershell` ru
 - DNS query logging (if enabled)
 - MITRE ATT&CK technique references in comments
 
+## Local Modifications
+- **Removed exclusion for `cipher.exe`**in `1_process_creation` rules to enable detection of its execution
+  - Original line removed:
+    ```xml
+    <Image condition="contains">cipher.exe</Image>
+    ```
+  - Reason: Support custom Wazuh rule (`108100`) to alert on suspicious use of `cipher /w`.
+
 ## Intregation with Wazuh
 - Wazuh agent reads: `Microsoft-Windows-Sysmon/Operational`
 - Events appear in Wazuh Dashboard with full context (process, parent, command line, hashes)
