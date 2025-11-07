@@ -31,7 +31,7 @@ The modular design allows selective rule inclusion (e.g., enable `powershell` ru
     ```xml
     <Image condition="contains">cipher.exe</Image>
     ```
-  - Reason: Support custom Wazuh rule (`108100`) to alert on suspicious use of `cipher /w`.
+  - Reason: (NOT YET IMPLEMENT CORRECTLY) Support custom Wazuh rule (`108100`) to alert on suspicious use of `cipher /w`.
 
 ## Intregation with Wazuh
 - Wazuh agent reads: `Microsoft-Windows-Sysmon/Operational`
