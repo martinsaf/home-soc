@@ -1,13 +1,11 @@
 <!-- 102-new-user-created  -->
 
 <group name="local,account_management,">
-  <rule id="100102" level="10">
-    <field name="win.system.providerName">Microsoft=-Windows-Security-Auditing</field>
-    <field name="event_id">4720</field>
-    <description>New user account created (EventID 4720) - check admin assignments</description>
-    <group>account_management,privilege_escalation,</group>
+  <rule id="60109" level="12" overwrite>
+    <description>User account created - elevated severity for SOC-Lab</description>
+    <group>account_management,suspicious_activity,</group>
     <mitre>
-      <id>T1078</id>
+      <id>T1136.001</id>
     </mitre>
   </rule>
 </group>
