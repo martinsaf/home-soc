@@ -1,4 +1,4 @@
-<!-- 102-new-user-created  -->
+<!-- 103-new-user-created  -->
 
 <group name="local,account_management,">
   <rule id="60109" level="12" overwrite>
