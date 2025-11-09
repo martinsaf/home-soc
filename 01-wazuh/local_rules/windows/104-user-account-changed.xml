@@ -2,6 +2,8 @@
 
 <group name="local,account_management,">
   <rule id="60110" level="12" overwrite="yes">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^4738$</field>
     <description>User account CHANGED - elevated severity for SOC-Lab</description>
     <group>account_management,suspicious_activity,</group>
     <mitre>
