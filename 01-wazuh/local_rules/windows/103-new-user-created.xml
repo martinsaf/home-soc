@@ -1,8 +1,10 @@
 <!-- 103-new-user-created  -->
 
 <group name="local,account_management,">
-  <rule id="60109" level="12" overwrite>
-    <description>User account created - elevated severity for SOC-Lab</description>
+  <rule id="60109" level="12" overwrite="yes">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^4720$</field>
+    <description>User account created - elevated severity for SOC-Lab (filtered)</description>
     <group>account_management,suspicious_activity,</group>
     <mitre>
       <id>T1136.001</id>
