@@ -1,0 +1,12 @@
+<!-- 105-user-account-deleted -->
+<group name="local,account_management,">
+  <rule id="60111" level="12" overwrite="yes">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^4726&</field>
+    <description>User account DELETED - elevated severity for SOC-Lab</description>
+    <group>account_management,suspicious_activity,</group>
+    <mitre>
+      <id>T1531</id>
+    </mitre>
+  </rule>
+</group>
