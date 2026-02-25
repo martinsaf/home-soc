@@ -2,7 +2,7 @@
 
 <group name="local,powershell,commandline,">
   <rule id="101101" level="10">
-    <if_group>sysmon<if_group>
+    <if_group>sysmon</if_group>
     <field name="win.system.eventID">1</field>
     <field name="win.system.eventdata.commandLine" type="pcre2">(?i)-[a-z]*enc</field>
     <description>PowerShell EncodedCommand detected (CommandLine contains -enc)</description>

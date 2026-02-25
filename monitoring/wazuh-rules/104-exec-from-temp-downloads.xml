@@ -4,9 +4,8 @@
     <field name="win.system.providerName">Microsoft-Windows-Sysmon</field>
     <field name="win.system.eventID">1</field>
     <!-- Matches paths that contain \Temp\ or \Downloads\  -->
-    <match>\\Temp\\</match>
-    <match>\\Downloads\\</match>
-    <description>Execution from user temp or Downloads folder (suspicious execu>
+    <match>\\Temp\\|\\Downloads\\</match>
+    <description>Execution from user temp or Downloads folder (suspicious execution)</description>
     <group>execution_suspicious,</group>
     <mitre>
       <id>T1059</id>

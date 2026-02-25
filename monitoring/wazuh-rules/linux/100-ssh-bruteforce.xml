@@ -1,13 +1,23 @@
 <!-- 100-ssh-bruteforce.xml -->
 <group name="local,ssh,authentication">
-  <!-- Brute force rule base on official rule 5760 -->
-  <rule id="100101" level="12" frequency="5" timeframe="60">
-    <if_matched_sid>5760</if_matched_sid>
+  <!-- Brute force for non-existent users -->
+  <rule id="100101" level="12" frequency="3" timeframe="60">
+    <if_matched_sid>5710</if_matched_sid>
     <same_srcip />
-    <description>SSH brute force detected from source IP $(srcip)</description>
+    <description>SSH brute force (invalid user) detected from $(srcip)</description>
     <group>bruteforce,</group>
     <mitre>
       <id>T1110.001</id>
     </mitre>
   </rule>
+
+  <!-- Brute force for existent users  -->
+  <rule id="100102" level="12" frequency="3" timeframe="60">
+    <if_matched_sid>5760</if_matched_sid>
+    <same_srcip />
+    <description>SSH brute force (valid user) from $(srcip)</description>
+    <group>bruteforce,valid_user,</group>
+    <mitre><id>T1110.001</id></mitre>
+  </rule>
+
 </group>
