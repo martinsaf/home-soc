@@ -126,10 +126,9 @@ root@soc-lab:/var/ossec/ruleset/rules# grep -A 10 "id=\"5760\"" /var/ossec/rules
 ```
 
 ### 3.2 Custom rule (already in my lab)
+This rule triggers when 3 failed attemps come from the same source IP within 60 seconds:
 
-[100-ssh-bruteforce.xml](monitoring/wazuh-rules/linux/100-ssh-bruteforce.xml)
-
-This rule triggers when 3 failed attemps come from the same source IP within 60 seconds.
+[100-ssh-bruteforce.xml](https://github.com/martinsaf/home-soc/blob/main/monitoring/wazuh-rules/linux/100-ssh-bruteforce.xml)
 
 ---
 
