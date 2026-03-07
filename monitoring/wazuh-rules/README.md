@@ -1,3 +1,11 @@
+# Detection scenarios implementd
+
+- [SSH brute force detection]()
+- [PowerShell encoded command detection]()
+- [Syspicious execution from tempo folder]()
+- [Account creation monitoring]()
+- [Privilege escalation detection]()
+
 # local_rules
 
 Custom Wazuh rules for the Home SOC lab.
@@ -5,6 +13,8 @@ Custom Wazuh rules for the Home SOC lab.
 ## How to use
 
 - Each XML file is a single rule or rule group. IDs use range 100100-100199.
+- Check rule `sudo /var/ossec/bin/wazuh-analysisd -t`
+  - or `wazuh-logtest`
 - Deploy to `/var/ossec/etc/rules/` and restart `wazuh-manager`
 
 ## Rules included
