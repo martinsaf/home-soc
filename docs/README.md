@@ -21,3 +21,5 @@ Each file captures a reusable concept, configuration, troubleshooting step, or d
 ## Session logs (Chronological)
 > Short-term notes from specific lab sessions. Only kept if they contain unique debugging steps or transient findings.
 - [Detection rules](https://github.com/martinsaf/home-soc/tree/main/01-wazuh/local_rules)
+
+> Work in progress
