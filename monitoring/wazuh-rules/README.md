@@ -1,7 +1,7 @@
 # Detection scenarios implementd
 
-- [SSH brute force detection](docs/troubleshooting/ssh-bruteforce-attack.md)
-- [Agent Disconnected](docs/troubleshooting/wazuh-agent-disconnected.md)
+- [SSH brute force detection](https://github.com/martinsaf/home-soc/blob/main/docs/troubleshooting/ssh-bruteforce-attack.md)
+- [Agent Disconnected](https://github.com/martinsaf/home-soc/blob/main/docs/troubleshooting/wazuh-agent-disconnected.md)
 - [PowerShell encoded command detection]()
 - [Syspicious execution from tempo folder]()
 - [Account creation monitoring]()
