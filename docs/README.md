@@ -9,17 +9,23 @@ Each file captures a reusable concept, configuration, troubleshooting step, or d
 ---
 
 ## Windows
+
 - [Sysmon: modular configuration from Olaf Hartong](https://github.com/olafhartong/sysmon-modular)
 - [Sysmon Configuration](https://github.com/martinsaf/home-soc/blob/main/04-notes/windows/sysmon-config.md)
 - [Sysmon:validation and testing](https://github.com/martinsaf/home-soc/blob/main/04-notes/windows/sysmon-validation.md)
+
 ## Linux
+
 - [audit: monitoring sudo, identity, and SSH config](https://github.com/martinsaf/home-soc/blob/main/04-notes/linux/auditd-config.md)
+
 ## Networking
 
 ## Wazuh
 
 ## Session logs (Chronological)
+
 > Short-term notes from specific lab sessions. Only kept if they contain unique debugging steps or transient findings.
-- [Detection rules](https://github.com/martinsaf/home-soc/tree/main/01-wazuh/local_rules)
+
+- [Detection rules](https://github.com/martinsaf/home-soc/tree/main/monitoring/wazuh-rules)
 
 > Work in progress
