@@ -15,7 +15,7 @@ Simulate a brute-force attack against an SSH server, trigger Wazuh alerts, and d
 
 ## 1. Attacker Scripts (Python)
 
-### `ssh_bruteforce.py`
+### [`ssh_bruteforce.py`](https://github.com/martinsaf/home-soc/blob/main/scripts/python/ssh-bruteforce-attack.py)
 
 ```python
 #!/usr/bin/env python3
@@ -126,6 +126,7 @@ root@soc-lab:/var/ossec/ruleset/rules# grep -A 10 "id=\"5760\"" /var/ossec/rules
 ```
 
 ### 3.2 Custom rule (already in my lab)
+
 This rule triggers when 3 failed attemps come from the same source IP within 60 seconds:
 
 [100-ssh-bruteforce.xml](https://github.com/martinsaf/home-soc/blob/main/monitoring/wazuh-rules/linux/100-ssh-bruteforce.xml)
