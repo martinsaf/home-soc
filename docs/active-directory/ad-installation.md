@@ -522,8 +522,9 @@ Now that the Domain Controller is operational, the lab continues to evolve:
 ### 📄 Active Directory Series (Ongoing)
 | Document | Purpose | Status |
 |----------|---------|--------|
-| [`ad-users-groups.md`](./ad-users-groups.md) | Creating OUs, users, and groups for lab testing | ⏳ Planned |
-| [`ad-join-windows-client.md`](./ad-join-windows-client.md) | Adding a Windows 10 VM to the domain | ⏳ Planned |
+| [`ad-installation.md`](./ad-installation.md) | Initial DC setup | ✅ done |
+| [`ad-users-groups.md`](./ad-users-groups.md) | Creating OUs, users, and groups | ✅ done |
+| [`ad-join-windows-client.md`](./ad-join-windows-client.md) | Adding a Windows 10 VM to the domain | ✅ done |
 | [`ad-group-policy.md`](./ad-group-policy.md) | Testing GPOs for configuration management | ⏳ Planned |
 | [`ad-integration-wazuh.md`](./ad-integration-wazuh.md) | Monitoring AD security events with Wazuh | ⏳ Planned |
 | [`ad-troubleshooting.md`](./ad-troubleshooting.md) | Common issues and resolutions | ⏳ Planned |
