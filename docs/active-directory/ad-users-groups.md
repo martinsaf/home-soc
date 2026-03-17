@@ -197,6 +197,20 @@ Groups can contain other groups.
 > **Why nesting?**
 > It simplifies managament. You give permission to `IT-Admins`, and anyone in that group inherits them.
 
+### Visual Example: All-Employees Group Structure
+
+![All-Employees group showing nested department groups](./imgs/AD-All-Employees-Properties.jpg)
+
+*Figure: The All-Employees group containing all department teams (HR-Team, IT-Team, Management-Team, Sales-Team)*
+
+**What you're seeing:**
+- **HR-Team** → `lab.local/LabCorp/HR/Groups`
+- **IT-Team** → `lab.local/LabCorp/IT/Groups`
+- **Management-Team** → `lab.local/LabCorp/Management/Groups`
+- **Sales-Team** → `lab.local/LabCorp/Sales/Groups`
+
+This is **group nesting** - instead of adding 20 individual users to All-Employees, we just add 4 groups! 🎯
+
 ---
 
 ## 5. Testing What You've Created
@@ -221,10 +235,33 @@ Get-ADGroupMember -Identity "IT-Team" | Format-Table Name, SamAccountName
 ### Test 3: Check group membership for a user
 ```powershell
 # Sell al groups Carlos belongs to
-Get-ADUser -Identify "carlos.silva" -Properties MemberOf |
+Get-ADUser -Identity "carlos.silva" -Properties MemberOf |
     Select-Object -ExpandProperty MemberOf |
     Get-ADGroup | Format-Table Name
 ```
 
+---
+
 ## 6. Common Tasks & Useful Commands 📝
 
+### PowerShell Cheat Sheet
+
+| Task | Command |
+|------|---------|
+| Create new OU | `New-ADOrganizationalUnit -Name "NewOU" -Path "DC=lab,DC=local"` |
+| Create new user | `New-ADUser -Name "Joao" -SamAccountName "joao" -UserPrincipalName "joao@lab.local" -Enabled $true -AccountPassword (ConvertTo-SecureString "P@ssw0rd" -AsPlainText -Force)` |
+| Create new group | `New-ADGroup -Name "NewGroup" -GroupScope Global -Path "OU=Groups,DC=lab,DC=local"` |
+| Add user to group | `Add-ADGroupMember -Identity "IT-Team" -Members "carlos.silva"` |
+| List all users | `Get-ADUser -Filter * -Properties * \| Format-Table Name, SamAccountName` |
+
+---
+
+## 8. Next Steps 🚀
+
+Now that your domain has users and groups, it's time to put them to work:
+
+| Document | What you'll do |
+|----------|----------------|
+| [`ad-join-windows-client.md`](./ad-join-windows-client.md) | Join a Windows 10 VM to the domain and log in as one of these users |
+| [`ad-group-policy.md`](./ad-group-policy.md) | Apply policies (like wallpaper, security settings) to specific OUs |
+| [`ad-integration-wazuh.md`](./ad-integration-wazuh.md) | Monitor when users are created/deleted using Wazuh |
