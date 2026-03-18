@@ -104,7 +104,7 @@ Example for IT:
 *Repeat for Sales, HR and Management.*
 
 > **Why separate Users and Groups OUs?**
-> It keeps things organizad. When you have 100 users and 20 groups, you'll thank yourself.
+> It keeps things organized. When you have 100 users and 20 groups, you'll thank yourself.
 
 ---
 
@@ -112,7 +112,7 @@ Example for IT:
 
 Now let's populate our OUs with some test users.
 
-### Step 3.1: Crate a user in IT
+### Step 3.1: Create a user in IT
 
 1. Navigate to `LabCorp` -> `IT` -> `Users`
 2. **Right-click** on the `User` OU -> **New** -> **User**
@@ -144,7 +144,7 @@ Double-click any user to explore:
 - **Member Of**: Which groups this user belongs to
 - **Profile**: Profile path, home folder
 
-> **Take a momento to explore** - this is where the power of AD lives!
+> **Take a moment to explore** - this is where the power of AD lives!
 
 ---
 
@@ -195,7 +195,7 @@ Groups can contain other groups.
 3. Now add the `IT-Admins` group to a higher-level group like `All-Employees`
 
 > **Why nesting?**
-> It simplifies managament. You give permission to `IT-Admins`, and anyone in that group inherits them.
+> It simplifies management. You give permissions to `IT-Admins`, and anyone in that group inherits them.
 
 ### Visual Example: All-Employees Group Structure
 
@@ -234,7 +234,7 @@ Get-ADGroupMember -Identity "IT-Team" | Format-Table Name, SamAccountName
 
 ### Test 3: Check group membership for a user
 ```powershell
-# Sell al groups Carlos belongs to
+#See all groups Carlos belongs to
 Get-ADUser -Identity "carlos.silva" -Properties MemberOf |
     Select-Object -ExpandProperty MemberOf |
     Get-ADGroup | Format-Table Name
@@ -256,7 +256,7 @@ Get-ADUser -Identity "carlos.silva" -Properties MemberOf |
 
 ---
 
-## 8. Next Steps 🚀
+## 7. Next Steps 🚀
 
 Now that your domain has users and groups, it's time to put them to work:
 
