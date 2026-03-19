@@ -103,11 +103,11 @@ New-SmbShare -Name "Shared" -Path "C:\Shared" -ChangeAccess "Everyone"
 1. Right-click **Group Policy Objects** -> **New**
 2. **Name:** `Restrict-Sales`
 3. Click **OK**
-4. Right-click the new GPO -> **OK**
+4. Right-click the new GPO -> **Edit**
 
 **Configure the policy:**
 - Navigate to: `User Configuration` -> `Policies` -> `Administrative Templates` -> `Control Panel`
-- Find: **"Prohibit access to Control and PC settings"**
+- Find: **"Prohibit access to Control Panel and PC settings"**
 - Double-click -> **Enabled**
 - Click **OK**
 - Close the Group Policy Management Editor
