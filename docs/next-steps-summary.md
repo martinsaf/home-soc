@@ -226,7 +226,6 @@ Simulate real Service Desk workflows:
 
 Create `docs/itsm/cmdb.md`:
 
-```markdown
 # CMDB - Asset Inventory
 
 | Asset | IP | OS | RAM | Disk | Role | Last Updated |
@@ -237,7 +236,6 @@ Create `docs/itsm/cmdb.md`:
 | Wazuh-Server | 192.168.200.2 | Ubuntu 22.04 LTS | 4 GB | 80 GB | SIEM | 2026-03-20 |
 | Mailcow | TBD | Ubuntu/Windows | - | - | Email Server | - |
 | GLPI | TBD | Ubuntu/Windows | - | - | ITSM | - |
-```
 
 > Need to update this file whenever I add/remove lab resources.
 
