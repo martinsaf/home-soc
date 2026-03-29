@@ -527,7 +527,7 @@ Now that the Domain Controller is operational, the lab continues to evolve:
 | [`ad-join-windows-client.md`](./ad-join-windows-client.md) | Adding a Windows 10 VM to the domain | ✅ done |
 | [`ad-group-policy.md`](./ad-group-policy.md) | Testing GPOs for configuration management | ✅ done |
 | [`ad-integration-wazuh.md`](./ad-integration-wazuh.md) | Monitoring AD security events with Wazuh | ✅ done |
-| [`ad-troubleshooting.md`](./ad-troubleshooting.md) | Common issues and resolutions | ⏳ Planned |
+| [`ad-troubleshooting.md`](./ad-troubleshooting.md) | Common issues and resolutions | ✅ Planned |
 
 ### 🔍 Other Lab Areas
 - **Detection Engineering**: Creating Wazuh rules for AD events (user creation, group changes)
