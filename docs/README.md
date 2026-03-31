@@ -13,12 +13,14 @@ Each file captures a reusable concept, configuration, or detection workflow — 
 
 ## 🗂️ Table of Contents
 
-- [Active Directory](#active-directory)
-- [Windows](#windows)
-- [Linux](#linux)
-- [Networking](#networking)
-- [Troubleshooting](#troubleshooting)
-- [Monitoring Rules](#monitoring-rules)
+- [Active Directory](./active-directory/README.md)
+- [Email](./email/)
+- [ITSM](./itsm/)
+- [Windows](./windows/)
+- [Linux](./linux/)
+- [Networking](./networking/)
+- [Troubleshooting](./networking/)
+- [Monitoring Rules](../monitoring/wazuh-rules/README.md)
 
 ---
 
@@ -34,6 +36,24 @@ Each file captures a reusable concept, configuration, or detection workflow — 
 | [`ad-troubleshooting.md`](./active-directory/ad-troubleshooting.md) | Common AD issues and solutions |
 
 > 🖼️ Screenshots: [`./active-directory/imgs/`](./active-directory/imgs/)
+
+---
+
+## Email 📧
+
+| Document | Description |
+| - | - |
+| [hMailServer-setup-on-DC01.md](./email/hMailServer-setup-on-DC01.md) | Install and configure hMailServer IMAP/SMTP on Windows Server 2022 (DC01) |
+| [rainloop-setup.md](./email/rainloop-setup.md) | Deploy RainLoop webmail client via Docker on Windows laptop |
+
+---
+
+## ITSM 🤹
+
+| Document | Description |
+| - | - |
+| [glpi-setup.md](./itsm/glpi-setup.md) | GLPI ticketing system setup via Docker (files created, implementation pending) |
+| [cmdb.md](./itsm/cmdb.md) | Simple asset inventory in Markdown format |
 
 ---
 
@@ -62,6 +82,7 @@ Each file captures a reusable concept, configuration, or detection workflow — 
 
 | Document | Description |
 | :--- | :--- |
+| [ad-integration-linux.md](./linux/ad-integration-linux.md) | Join Ubuntu endpoint to Active Directory domain via realmd/SSSD |
 | [`lab-network-architecture.md`](./networking/lab-network-architecture.md) | Network diagram, VLANs, and firewall rules for the lab |
 
 ---
@@ -72,6 +93,7 @@ Each file captures a reusable concept, configuration, or detection workflow — 
 | :--- | :--- |
 | [`ssh-bruteforce-attack.md`](./troubleshooting/ssh-bruteforce-attack.md) | Detect and respond to SSH brute-force attempts |
 | [`wazuh-agent-disconnected.md`](./troubleshooting/wazuh-agent-disconnected.md) | Fix Wazuh agent connectivity issues |
+| [`rainloop-short-login-authentication-problem.md`](./rainloop-short-login-authentication-problem.md) | RainLoop authentication failures due to short login bug with hMailServer |
 
 ---
 
@@ -95,10 +117,35 @@ Custom Wazuh rules for detection:
 
 ```text
 docs/
-├── active-directory/ # AD setup, users, GPOs, Wazuh integration
-├── linux/ # auditd, hardening
-├── networking/ # network design, firewall rules
-├── troubleshooting/ # incident response notes
-├── windows/ # Sysmon, endpoint config
-└── README.md # You are here 👈
+├── active-directory/     # AD setup, users, GPOs, Wazuh integration
+│   ├── imgs/
+│   ├── ad-installation.md
+│   ├── ad-users-groups.md
+│   ├── ad-join-windows-client.md
+│   ├── ad-group-policy.md
+│   ├── ad-integration-wazuh.md
+│   ├── ad-troubleshooting.md
+│   └── README.md
+├── email/                # Email server + webmail configuration
+│   ├── hMailServer-setup-on-DC01.md
+│   └── rainloop-setup.md
+├── itsm/                 # ITSM ticketing and CMDB (files created, pending implementation)
+│   ├── glpi-setup.md
+│   └── cmdb.md
+├── linux/                # Linux endpoint: AD join, auditd
+│   ├── imgs/
+│   ├── ad-integration-linux.md
+│   └── auditd-config.md
+├── networking/           # Network design and firewall rules
+│   └── lab-network-architecture.md
+├── troubleshooting/      # Incident response and common fixes
+│   ├── ssh-bruteforce-attack.md
+│   ├── wazuh-agent-disconnected.md
+│   └── rainloop-short-login-authentication-problem.md
+├── windows/              # Windows endpoint: Sysmon, hardening
+│   ├── sysmon-config.md
+│   ├── sysmon-validation.md
+│   └── windows-endpoint.md
+├── next-steps-summary.md
+└── README.md             # You are here
 ```
