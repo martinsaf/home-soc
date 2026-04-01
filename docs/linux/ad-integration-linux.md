@@ -82,7 +82,7 @@ sudo realm join -U administrator lab.local
 - `-U administrator` – uses the domain administrator account for authentication
 - `lab.local` – the domain to join
 
-Password: `[administrator password]`
+Password: `[administrator password]` *P@ssw0rd123*
 
 
 **Verify Domain Membership: **
