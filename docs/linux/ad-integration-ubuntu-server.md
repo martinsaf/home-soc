@@ -116,3 +116,55 @@ su - carlos.silva@lab.local
 - ⚠️ Home directory doesnt exist yet (expected before `pam-auth-update`)
 
 ## 6. Configure Automatic Home Directory Creation
+
+Enable automatic home directory creation for AD users on first login:
+
+```bash
+# Install PAM SSS module
+sudo apt install libpam-sss -y
+
+# Configure PAM authentication
+sudo pam-auth-update
+```
+
+![PAM configuration menu](./imgs/pam-configuration.jpg)
+*PAM authentication configuration - The `pam-auth-update` command opens an interactive menu where you can enable PAM profiles. Use arrow keys to navigate and Space to select/deselect options. The "Create home directory on login" option may require scrolling down (not visible in this screenshot)*
+
+In the menu:
+- Enable: **Create home directory on login** (use arrow keys ↓ and Space to mark)
+- Ensure: **Unix authentication** is also enabled
+- Select **OK**
+
+Test with a new AD user:
+```bah
+su - maria.santos@lab.local
+# Should now create /home/maria.santos@lab.local automatically
+```
+
+Verify:
+```bash
+ls -la /home/
+``` 
+![Home directory automatically created](./imgs/directory-automatically-created.jpg)
+*Automatic home directory creation on first login - When `maria.santos@lab.local` logs in for the first time, the system automatically creates `/home/maria.santos@lab.local` with correct ownership (`maria.santos@lab.local:domain user@lab.local`) and permissions (`750`). The directory is owned by the AD user and the `domain users` group from the domain.*
+
+**What this confirms:**
+- PAM is configured to auto-create home directories
+- AD user `maria.santos@lab.local` successfully authenticated
+- Home directory created with correct ownership and permissions
+- Group ownership set to `domain users@lab.local` (all domain users)
+
+---
+
+## 7. Test SSH Login (Optional)
+
+Test remote login with AD credentials:
+
+```bash
+# From another machine or locally
+ssh "carlos.silva@lab.local"@192.168.200.2
+# OR
+ssh carlos.silva@192.168.200.2 # If SSSD is properly configured
+```
+
+> **Note:** *To be completed, connection fails*
